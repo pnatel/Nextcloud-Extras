@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=nextcloud:latest
+ARG BASE_IMAGE
 
 FROM $BASE_IMAGE
 

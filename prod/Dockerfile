@@ -1,3 +1,5 @@
+ARG BASE_IMAGE
+
 FROM $BASE_IMAGE
 
 LABEL org.opencontainers.image.authors="https://github.com/pnatel"
