@@ -2,9 +2,10 @@
 
 Nextcloud image with extra packages
 
-This image is a multiplatform (ARM and x86) implementation of the Nextcloud Image with extra packages like imagemagick and ffmpeg.
+* This image is a multiplatform (ARM and x86) implementation of the Nextcloud Image with extra packages like imagemagick and ffmpeg.
+* The image is kept in DockerHub for convenience and can be pulled directly via `docker pull pnatel/nextcloud-imagemagick-ffmpeg:<TAG>`
 
-Dockerfile used is available in the [GitHub repo](https://github.com/pnatel/Nextcloud-Extras).
+* Dockerfile available in the [GitHub repo](https://github.com/pnatel/Nextcloud-Extras) for reference.
 
 ## Notes
 
