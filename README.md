@@ -15,8 +15,8 @@ Nextcloud image with extra packages
 
 ## The available tags represent
 
-- nc-29-apache/dev/current - the current Nextcloud version (v.29 on 22/08/2024)
-- nc-28-apache/prod/old - and its last one (v.28 on 22/08/2024)
+- nc-29-apache/dev/current - the current Nextcloud version (v.29 on 11/10/2024)
+- nc-28-apache/prod/old - and its last one (v.28 on 11/10/2024)
 - nc-27-apache - outdated (v.27 on 27/04/2024)
 
 Hit me up on Discord (@pnatel) if you have questions.
