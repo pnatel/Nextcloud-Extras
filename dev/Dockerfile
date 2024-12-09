@@ -12,7 +12,3 @@ RUN apt-get update \
     && apt-get -y install imagemagick ffmpeg \
     # Extract
     && apt-get -y install unrar-free p7zip p7zip-full
-
-# Support for Storj External Storage (https://apps.nextcloud.com/apps/storj)
-RUN apt install -y libffi-dev && docker-php-ext-install ffi
-RUN echo ffi.enable=true > /usr/local/etc/php/conf.d/ffi.ini
