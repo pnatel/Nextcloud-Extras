@@ -11,7 +11,6 @@ Nextcloud image with extra packages
 
 * Added packages for the [Extract app](https://apps.nextcloud.com/apps/extract)
   This app is unsupported at the moment and it is included for testing only.
-* The DEV image also installs packages for the [Storj External Storage](https://apps.nextcloud.com/apps/storj)
 
 ## The available tags represent
 
