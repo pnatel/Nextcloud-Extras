@@ -16,8 +16,9 @@ Nextcloud image with extra packages
 
 Check latest Github Actions date for image tag age [![Build Nextcloud image with extra packages](https://github.com/pnatel/Nextcloud-Extras/actions/workflows/nc-dockerimage.yml/badge.svg)](https://github.com/pnatel/Nextcloud-Extras/actions/workflows/nc-dockerimage.yml)
 
-- nc-30-apache/dev/current - Current Nextcloud 30 release as per latest Github action date 
-- nc-29-apache/prod/old - Current Nextcloud 29 release as per latest Github action date 
+- nc-31-apache/dev/current - Current Nextcloud 30 release as per latest Github action date 
+- nc-30-apache/prod/old - Current Nextcloud 29 release as per latest Github action date
+- nc-29-apache - outdated (v.29.0.11 on 29/01/2025)
 - nc-28-apache - outdated (v.28.0.12 on 01/12/2024)
 - nc-27-apache - outdated (v.27 on 27/04/2024)
 
