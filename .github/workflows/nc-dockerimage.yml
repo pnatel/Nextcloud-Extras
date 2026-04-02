@@ -1,5 +1,8 @@
 name: Build Nextcloud image with extra packages
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   workflow_dispatch:
     # Inputs the workflow accepts.
