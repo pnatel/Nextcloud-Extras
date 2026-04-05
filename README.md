@@ -24,6 +24,7 @@ Check latest Github Actions date for image tag age [![Build Nextcloud image with
 - nc-29-apache - outdated (v.29.0.11 on 29/01/2025)
 - nc-28-apache - outdated (v.28.0.12 on 01/12/2024)
 - nc-27-apache - outdated (v.27 on 27/04/2024)
+
 Refer to [Nextcloud Maintenance and Release Schedule](https://github.com/nextcloud/server/wiki/Maintenance-and-Release-Schedule) for lifecycle details. 
 
 
