@@ -66,32 +66,32 @@ jobs:
             org.opencontainers.image.title=nextcloud-imagemagick-ffmpeg
             org.opencontainers.image.description=Build Nextcloud Current image with imagemagick and ffmpeg packages for ARM and x86 systems     
 
-  prod-docker:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v4
-      -
-        name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      -
-        name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          # context: .
-          file: ./prod/Dockerfile
-          build-args: BASE_IMAGE=nextcloud:${{ inputs.prod_tag }}-apache
-          platforms: linux/amd64,linux/arm64
-          push: true
-        #  tags: pnatel/nextcloud-imagemagick-ffmpeg:current
-          tags: |
-            ${{ secrets.GITEA_URL }}/${{ secrets.GITEA_USERNAME }}/nextcloud-imagemagick-ffmpeg:old
-            ${{ secrets.GITEA_URL }}/${{ secrets.GITEA_USERNAME }}/nextcloud-imagemagick-ffmpeg:prod
-            ${{ secrets.GITEA_URL }}/${{ secrets.GITEA_USERNAME }}/nextcloud-imagemagick-ffmpeg:nc-${{ inputs.prod_tag }}-apache
-          labels: |
-            org.opencontainers.image.title=nextcloud-imagemagick-ffmpeg
-            org.opencontainers.image.description=Build Nextcloud Current image with imagemagick and ffmpeg packages for ARM and x86 systems   
+  # prod-docker:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     -
+  #       name: Checkout
+  #       uses: actions/checkout@v4
+  #     -
+  #       name: Set up QEMU
+  #       uses: docker/setup-qemu-action@v3
+  #     -
+  #       name: Set up Docker Buildx
+  #       uses: docker/setup-buildx-action@v3
+  #     -
+  #       name: Build and push
+  #       uses: docker/build-push-action@v5
+  #       with:
+  #         # context: .
+  #         file: ./prod/Dockerfile
+  #         build-args: BASE_IMAGE=nextcloud:${{ inputs.prod_tag }}-apache
+  #         platforms: linux/amd64,linux/arm64
+  #         push: true
+  #       #  tags: pnatel/nextcloud-imagemagick-ffmpeg:current
+  #         tags: |
+  #           ${{ secrets.GITEA_URL }}/${{ secrets.GITEA_USERNAME }}/nextcloud-imagemagick-ffmpeg:old
+  #           ${{ secrets.GITEA_URL }}/${{ secrets.GITEA_USERNAME }}/nextcloud-imagemagick-ffmpeg:prod
+  #           ${{ secrets.GITEA_URL }}/${{ secrets.GITEA_USERNAME }}/nextcloud-imagemagick-ffmpeg:nc-${{ inputs.prod_tag }}-apache
+  #         labels: |
+  #           org.opencontainers.image.title=nextcloud-imagemagick-ffmpeg
+  #           org.opencontainers.image.description=Build Nextcloud Current image with imagemagick and ffmpeg packages for ARM and x86 systems   
