@@ -10,7 +10,7 @@ on:
       dev_tag:
         description: 'Latest released tag to be used in DEV (Interger only)'
         # Default value if no value is explicitly provided
-        default: "33"
+        default: 33
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
@@ -18,7 +18,7 @@ on:
       prod_tag:
         description: 'Production Tag (Interger only)'
         # Default value if no value is explicitly provided
-        default: "32"
+        default: 32
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
