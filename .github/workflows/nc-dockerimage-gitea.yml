@@ -28,18 +28,18 @@ jobs:
   dev-docker:
     runs-on: ubuntu-latest
 
-        # 1. Grant permission to read packages
-    permissions:
-      contents: read
-      packages: read
+    #     # 1. Grant permission to read packages
+    # permissions:
+    #   contents: read
+    #   packages: read
     
-    container:
-      image: ghcr.io/catthehacker/ubuntu:act-latest
-      # Provide credentials here for the initial pull
-      credentials:
-        username: ${{ secrets.GHCR_USER }}
-        password: ${{ secrets.GHCR_TOKEN }}
-      options: --user root -v /var/run/docker.sock:/var/run/docker.sock
+    # container:
+    #   image: ghcr.io/catthehacker/ubuntu:act-latest
+    #   # Provide credentials here for the initial pull
+    #   credentials:
+    #     username: ${{ secrets.GHCR_USER }}
+    #     password: ${{ secrets.GHCR_TOKEN }}
+    #   options: --user root -v /var/run/docker.sock:/var/run/docker.sock
 
     steps:
       -
