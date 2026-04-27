@@ -41,7 +41,7 @@ jobs:
         name: Login to REGISTRY Registry
         uses: docker/login-action@v4
         with:
-          registry: ${{ secrets.REGISTRY_FQDN }}
+          registry: ${{ secrets.REGISTRY_URL }}
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_TOKEN }}
       -
@@ -78,7 +78,7 @@ jobs:
         name: Login to REGISTRY Registry
         uses: docker/login-action@v4
         with:
-          registry: ${{ secrets.REGISTRY_FQDN }}
+          registry: ${{ secrets.REGISTRY_URL }}
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_TOKEN }}
       -
