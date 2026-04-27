@@ -27,17 +27,17 @@ on:
 jobs:
   dev-docker:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/catthehacker/ubuntu:act-latest
+      # Required so the action can find the 'docker' executable/socket
+      options: --user root -v /var/run/docker.sock:/var/run/docker.sock
     steps:
-      # - name: curl
-      #   uses: sozo-design/curl@v1.0.2
-      #   with:
-      #     args: "-X 'GET' 'https://gitea.thecraftkeeper.com/api/v1/version' -H 'accept: application/json' -H 'X-GITEA-OTP: c7a941038d93fcceb40ed2c67dc85eb8a7b31acb'"
       -
         name: Checkout
         uses: actions/checkout@v4
       -
         name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v4
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
