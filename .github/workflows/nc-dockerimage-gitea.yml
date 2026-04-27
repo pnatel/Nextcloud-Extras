@@ -26,7 +26,7 @@ on:
 
 jobs:
   dev-docker:
-    runs-on: ubuntu-latest
+    runs-on: oci-br  # ubuntu-latest
     steps:
       -
         name: Checkout
@@ -63,7 +63,7 @@ jobs:
             org.opencontainers.image.description=Build Nextcloud Current image with imagemagick and ffmpeg packages for ARM and x86 systems     
 
   prod-docker:
-    runs-on: ubuntu-latest
+    runs-on: oci-br  # ubuntu-latest
     steps:
       -
         name: Checkout
