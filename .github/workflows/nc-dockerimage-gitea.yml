@@ -52,7 +52,7 @@ jobs:
           # context: .
           file: ./dev/Dockerfile
           build-args: BASE_IMAGE=nextcloud:${{ inputs.dev_tag }}-apache
-          platforms: linux/amd64,linux/arm64
+          # platforms: linux/amd64,linux/arm64
           push: true
         #  tags: pnatel/nextcloud-imagemagick-ffmpeg:current
           tags: |
@@ -63,40 +63,40 @@ jobs:
             org.opencontainers.image.title=nextcloud-imagemagick-ffmpeg
             org.opencontainers.image.description=Build Nextcloud Current image with imagemagick and ffmpeg packages for ARM and x86 systems     
 
-  prod-docker:
-    runs-on: oci-br  # ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  # prod-docker:
+  #   runs-on: oci-br  # ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v4
+  #     - name: Set up QEMU
+  #       uses: docker/setup-qemu-action@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
-        with:
-          version: v0.34.0
+  #     - name: Set up Docker Buildx
+  #       uses: docker/setup-buildx-action@v4
+  #       with:
+  #         version: v0.34.0
 
-      - name: Login to REGISTRY Registry
-        uses: docker/login-action@v4
-        with:
-          registry: ${{ secrets.REGISTRY_URL }}
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
+  #     - name: Login to REGISTRY Registry
+  #       uses: docker/login-action@v4
+  #       with:
+  #         registry: ${{ secrets.REGISTRY_URL }}
+  #         username: ${{ secrets.REGISTRY_USER }}
+  #         password: ${{ secrets.REGISTRY_TOKEN }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          # context: .
-          file: ./prod/Dockerfile
-          build-args: BASE_IMAGE=nextcloud:${{ inputs.prod_tag }}-apache
-          platforms: linux/amd64,linux/arm64
-          push: true
-        #  tags: pnatel/nextcloud-imagemagick-ffmpeg:current
-          tags: |
-            ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_USER }}/nextcloud-imagemagick-ffmpeg:old
-            ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_USER }}/nextcloud-imagemagick-ffmpeg:prod
-            ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_USER }}/nextcloud-imagemagick-ffmpeg:nc-${{ inputs.prod_tag }}-apache
-          labels: |
-            org.opencontainers.image.title=nextcloud-imagemagick-ffmpeg
-            org.opencontainers.image.description=Build Nextcloud Current image with imagemagick and ffmpeg packages for ARM and x86 systems   
+  #     - name: Build and push
+  #       uses: docker/build-push-action@v5
+  #       with:
+  #         # context: .
+  #         file: ./prod/Dockerfile
+  #         build-args: BASE_IMAGE=nextcloud:${{ inputs.prod_tag }}-apache
+  #         platforms: linux/amd64,linux/arm64
+  #         push: true
+  #       #  tags: pnatel/nextcloud-imagemagick-ffmpeg:current
+  #         tags: |
+  #           ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_USER }}/nextcloud-imagemagick-ffmpeg:old
+  #           ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_USER }}/nextcloud-imagemagick-ffmpeg:prod
+  #           ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_USER }}/nextcloud-imagemagick-ffmpeg:nc-${{ inputs.prod_tag }}-apache
+  #         labels: |
+  #           org.opencontainers.image.title=nextcloud-imagemagick-ffmpeg
+  #           org.opencontainers.image.description=Build Nextcloud Current image with imagemagick and ffmpeg packages for ARM and x86 systems   
