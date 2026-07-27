@@ -1,10 +1,12 @@
-ARG BASE_IMAGE
+# ARG BASE_IMAGE
 
-FROM $BASE_IMAGE
+# FROM $BASE_IMAGE
+
+FROM nextcloud:33-apache
 
 LABEL org.opencontainers.image.authors="https://github.com/pnatel"
 
-EXPOSE 80:80/tcp
+EXPOSE 80/tcp
 
 # Extra packages for apps
 RUN apt-get update \
