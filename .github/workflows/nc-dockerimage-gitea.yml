@@ -44,7 +44,7 @@ jobs:
           # FIX 2: Restrict parallelism to stop OOM crashes during ffmpeg/imagemagick builds
           buildkitd-config-inline: |
             [worker.oci]
-              max-parallelism = 2
+              max-parallelism = 1
 
       - name: Login to REGISTRY Registry
         uses: docker/login-action@v4
