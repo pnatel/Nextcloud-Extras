@@ -46,11 +46,23 @@ jobs:
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_TOKEN }}
 
+      - name: Clean up Docker system resources
+        run: |
+          echo "=== Before cleanup ==="
+          docker system df
+          
+          echo "=== Running prune ==="
+          docker system prune -af --volumes
+          
+          echo "=== After cleanup ==="
+          docker system df
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           # context: .
           file: ./dev/Dockerfile
+          driver-opts: image=moby/buildkit:stable # Forces a stable BuildKit version
           build-args: BASE_IMAGE=nextcloud:${{ inputs.dev_tag }}-apache
           # platforms: linux/amd64,linux/arm64
           push: true
