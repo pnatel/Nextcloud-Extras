@@ -4,7 +4,6 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 on:
-  push:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
@@ -27,7 +26,7 @@ on:
 
 jobs:
   dev-docker:
-    runs-on: oci-br  # ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
