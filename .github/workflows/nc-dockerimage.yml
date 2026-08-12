@@ -2,6 +2,8 @@ name: DockerHub - Build Nextcloud image with extra packages
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  DEV_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.dev_tag || '33' }}
+  PROD_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.prod_tag || '32' }}
 
 on:
   schedule:
@@ -54,7 +56,7 @@ jobs:
             # type=raw,value={{branch}}-{{sha}}
             type=raw,value=current
             type=raw,value=dev
-            type=raw,value=nc-${{ inputs.dev_tag }}-apache
+            type=raw,value=nc-${{ env.DEV_TAG }}-apache
           flavor: |
             latest=auto
           labels: |
@@ -76,7 +78,7 @@ jobs:
         with:
           # context: .
           file: ./dev/Dockerfile
-          build-args: BASE_IMAGE=nextcloud:${{ inputs.dev_tag }}-apache
+          build-args: BASE_IMAGE=nextcloud:${{ env.DEV_TAG }}-apache
           platforms: linux/amd64,linux/arm64
           push: true
         #  tags: pnatel/nextcloud-imagemagick-ffmpeg:current
