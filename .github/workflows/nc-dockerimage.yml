@@ -2,8 +2,8 @@ name: DockerHub - Build Nextcloud image with extra packages
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  DEV_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.dev_tag || '33' }}
-  PROD_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.prod_tag || '32' }}
+  DEV_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.dev_tag || '34' }}
+  PROD_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.prod_tag || '33' }}
 
 on:
   schedule:
