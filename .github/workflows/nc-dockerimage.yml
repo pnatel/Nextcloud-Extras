@@ -2,8 +2,8 @@ name: DockerHub - Build Nextcloud image with extra packages
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  DEV_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.dev_tag || '34' }}
-  PROD_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.prod_tag || '33' }}
+  DEV_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.dev_tag || '35' }}
+  PROD_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.prod_tag || '34' }}
 
 on:
   schedule:
@@ -16,7 +16,7 @@ on:
       dev_tag:
         description: 'Latest released tag to be used in DEV (Interger only)'
         # Default value if no value is explicitly provided
-        default: 34
+        default: 35
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
@@ -24,7 +24,7 @@ on:
       prod_tag:
         description: 'Production Tag (Interger only)'
         # Default value if no value is explicitly provided
-        default: 33
+        default: 34
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
